@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title th:text="${titulo}">Mi Portafolio</title>
+
+    <link rel="stylesheet" th:href="@{estilos.css}">
+
 </head>
 <body>
-    <h1 th:text="${titulo}">¡Hola Mundo!</h1>
-    <p>Bienvenido a mi portafolio con Spring Boot.</p>
+<h1 th:text="${titulo}">¡Hola Mundo!</h1>
+<p>Bienvenido a mi portafolio con Spring Boot.</p>
 
-    <h2>Mis Proyectos</h2>
+<h2>Mis Proyectos</h2>
 
-    <div th:each="un_proyecto : ${proyectos}">
-        <h3 th:text="${un_proyecto.titulo}">Nombre del titulo (placeholder)</h3>
-        <p th:text="${un_proyecto.descripcion}">Descripción del Proyecto (placeholder)</p>
-        <hr> </div>
+<div th:each="un_proyecto : ${proyectos}" class="proyecto">
+    <h3 th:text="${un_proyecto.titulo}">Nombre del Proyecto (Placeholder)</h3>
+    <p th:text="${un_proyecto.descripcion}">Descripción del proyecto (Placeholder)</p>
+</div>
+
 </body>
 </html>
